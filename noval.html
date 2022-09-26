@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>novel</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .card-container {
+            -webkit-perspective: 700;
+            perspective: 700;
+        }
+
+        .card {
+            margin: 20px;
+            background-color: #0871b0;
+            width: 500px;
+            height: 350px;
+            text-align: center;
+            /* 此處的 line-height 設定與 height 相同 */
+            /* 目的是要讓其子元素能「垂直置中」 */
+            /* line-height: 200px; */
+            color: #fff;
+            transition: all 0.6s ease;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .front,
+        .back {
+            background-color: #336e5d;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 350px;
+            /* 設定只要轉到背面，div 即隱藏不見 */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .back {
+            /* 先把第二個 div 旋轉 180 度至背面 */
+            /* 等到滑鼠一移入時(hover)，再旋轉 180 度，即轉回正面 */
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .card:hover {
+            /* 滑鼠一移入(hover)，旋轉 180 度 */
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        /* 下一張 */
+
+        a {
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            /* 底下的邊框粗細，特別設定成 width 和 height 的一半 */
+            border-width: 50px;
+            /* 底下顏色相當於「黑色」rgb(0, 0, 0) */
+            /* 再加上透明度 0（也就是完全透明） */
+            border-color: rgba(0, 0, 0, 0);
+
+            /* 底下的 50% 50% 設定可讓背景圖放置於正中間 */
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            /* 底下設定成 border-box 的作用如下 ... */
+            /* 背景圖放置的位置從 border 的左上角開始 */
+            /* 一般 background-origin 的預設值是 padding-box */
+            /* 它的背景圖放置的位置從 padding 的左上角開始 */
+            /* 另外，background-origin 也可以設成 content-box */
+            /* 此時，其背景圖放置的位置將從 content 的左上角開始 */
+            background-origin: border-box;
+
+            /* 底下設定成 border-box 的作用如下 ... */
+            /* width 和 height 的長度必須包含 content, padding 和 border */
+            /* 一般 box-sizing 的預設值是 content-box */
+            /* 它的width 和 height 的長度僅包含 content */
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+            /* 底下過渡(transition)時間愈小，動畫效果愈快 */
+            -webkit-transition: 1.5s ease;
+            transition: 1.5s ease;
+        }
+
+        /* 底下不同的 border-style，可以產生不同的邊框效果 */
+        /* 其中，rbga 最後一個參數值是透明度，設定成 0.5 的作用是... */
+        /* 讓 rgb(0, 0, 0) 的黑色背景不會太黑，只有一點點透明黑的效果 */
+        .one {
+            border: 50px solid rgba(0, 0, 0, 0.5);
+            background-image: url("images/novel/射鵰.jpg");
+        }
+
+        .two {
+            border: 150px dashed rgba(0, 0, 0, 0.5);
+            background-image: url("images/novel/射鵰.jpg");
+        }
+
+        .three {
+            border: 150px dotted rgba(0, 0, 0, 0.5);
+            background-image: url("images/novel/神雕.jpg");
+            background-size: 280px;
+        }
+
+        /* 底下將 border-width 從 50px 變成 1px，可以產生邊框散開的效果 */
+        .one:hover {
+            border: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        .two:hover {
+            border: 1px dashed rgba(0, 0, 0, 0.5);
+        }
+
+        .three:hover {
+            border: 1px dotted rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body style='background-image: url("images/background/paper.jpg");background-repeat: no-repeat;background-size:cover;'>
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+        <a class="navbar-brand">
+            <img src="images/動物.png" style="width:40px;">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">index</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="w3school.html">w3school introduce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Japantrip2.html">
+                    Japan viewpoint</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="favorite.html">interest</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="music.html">music</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="noval.html">novel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Japantrip1.html">photograph</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="introduce.html">introduce</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 開始 -->
+    <div class="card-container">
+        <p style="width: 40%;height: 200px;;float: left;"></p>
+        <div class="card">
+            <!-- <p style="width: 40%;display:inline;position: absolute;"></p> -->
+            <div class="front">
+                <img src="images/novel/天龍八部.jpg" style="width: 500px;height: 350px;">
+            </div>
+            <div class="back">
+                <p style="font-size:large;">劇情分三部分三個主角同時進行，主角其一--喬峰，為解開生世之謎，上山問師、大戰群雄，
+                    保護愛人之妹，最終脅迫兄弟（遼皇），感到愧對族人，而自殺身亡。其他兩個主角--段譽和虛竹，
+                    他們的過程都有奇遇，而且都沒經過太多波折。不過我覺得喬峰也算是了無遺憾了，
+                    唯一可能的就是愛人的妹妹無法繼續照顧，或許有些人會認為喬峰這樣很可憐，不過有過轟轟烈烈，
+                    也有過跟愛人的平靜安寧，儘管沒能一起實現夢想，至少彼此的心意都明瞭了</p>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class="col-sm-4" style="width: 60%;">
+            <a href="https://zh.wikipedia.org/wiki/%E5%B0%84%E9%B5%B0%E8%8B%B1%E9%9B%84%E5%82%B3" class="two" style="width: 300px;height: 300px;"></a>
+            <p style="width: 200px;display: inline-block;">雙主角--郭靖與黃蓉，郭靖樸實無華，黃蓉伶俐聰明<br>但就是因為這反差性格，促使他們被對方吸引，
+                進而一同闖蕩江湖<br>中間雖有許多分分合合，但也加深了對彼此的信任<br>如同我們常聽到的，
+                最重要不是開始與結果，而是過程，那酸甜苦辣的滋味才是最值得回味的</p>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="width: 40%;">
+            <a href="https://zh.wikipedia.org/wiki/%E7%A5%9E%E9%B5%B0%E4%BF%A0%E4%BE%B6" class="three" style="width: 300px;height: 300px;"></a>
+            <p style="width: 100px;display: inline-block;">雙主角--楊過與小龍女，兩人因為機緣巧合，成了師徒關係，卻也因為常在一起練武，漸生情愫，
+                不過這種亦師亦情的關係卻不被世俗所認可，經過了一波七折，最終如願一嘗，雙雙回到相識地終老</p>
+        </div>
+    </div>
+    <div class="row">
+        <p style="width: 40%;height: 200px;;float: left;"></p>
+        <div class="card">
+            <!-- <p style="width: 40%;display:inline;position: absolute;"></p> -->
+            <div class="front">
+                <img src="images/novel/笑傲.jpg" style="width: 500px;height: 350px;">
+            </div>
+            <div class="back">
+                <p style="font-size:large;">主角--令狐沖，喜歡師妹，師妹卻喜歡師弟，而後在江湖行走，被一女子一見鍾情，並一直幫助主角，
+                    最終師妹竟被自己喜歡的師弟所殺，但師妹竟不恨他，主角也發現他最愛的還是那一個愛他的女子，
+                    兩人於是退隱江湖。這部或許不是最經典的作品，但主角那不拘小節、重義氣、注重禮教的性格
+                    卻是我很想要的</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>w3school簡單解說</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        #a {
+            text-align: right;
+            font-size: x-large;
+            width: 50%;
+            display: inline-block;
+        }
+
+        #page1 {
+            width: 400px;
+            height: 200px;
+        }
+
+        #page1-1 {
+            width: 300px;
+            height: 150px;
+        }
+
+        #p1 {
+            width: 140px;
+        }
+
+        #p1-1 {
+            width: 180px;
+            /* text-align:unset; */
+        }
+
+        #p1-2 {
+            width: 230px;
+        }
+
+        #p1-3 {
+            width: 20px;
+            color: rgb(26, 55, 219);
+        }
+
+        #arrow1 {
+            width: 100px;
+            height: 100px;
+        }
+
+        #page2 {
+            width: 400px;
+            height: 200px;
+        }
+
+        #p2 {
+            width: 100px;
+            /* margin: 0px;
+            padding: 0px; */
+            /* margin-top: 300px; */
+        }
+
+        #arrow3 {
+            width: 100px;
+            height: 100px;
+            transition: width 2.5s, height 2.5s;
+        }
+
+        #arrow3:hover {
+            width: 200px;
+            height: 200px;
+        }
+
+        #arrow4 {
+            width: 100px;
+            height: 100px;
+            transition: width 2s, height 2s;
+        }
+        #arrow4:hover{
+            width: 200px;
+            height: 200px;
+        }
+
+        .a {
+            display: inline-block;
+        }
+
+        .b {
+            display: inline-block;
+        }
+
+        .c {
+            display: inline-block;
+        }
+
+        .d {
+            display: inline-block;
+        }
+
+        .e {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body style='background-image: url("images/w3school/背景.jpg");background-size: cover;'>
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+        <a class="navbar-brand">
+            <img src="images/動物.png" style="width:30px;padding: 0px;">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item" style="width: 100px;">
+                <a class="nav-link" href="index.html">index</a>
+            </li>
+            <li class="nav-item" style="width: 150px;">
+                <a class="nav-link" href="w3school.html">w3school introduce</a>
+            </li>
+            <li class="nav-item" style="width: 150px;">
+                <a class="nav-link" href="Japantrip2.html">
+                    Japan viewpoint</a>
+            </li>
+            <li class="nav-item" style="width: 100px;">
+                <a class="nav-link" href="favorite.html">interest</a>
+            </li>
+            <li class="nav-item" style="width: 100px;">
+                <a class="nav-link" href="music.html">music</a>
+            </li>
+            <li class="nav-item" style="width: 100px;">
+                <a class="nav-link" href="noval.html">novel</a>
+            </li>
+            <li class="nav-item" style="width: 100px;">
+                <a class="nav-link" href="Japantrip1.html">photograph</a>
+            </li>
+            <li class="nav-item" style="width: 100px;">
+                <a class="nav-link" href="introduce.html">introduce</a>
+            </li>
+        </ul>
+    </nav>
+    <div class='container'>
+        <p id='a'>請點一下</p>
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target=".kk">W3school</button>
+        <button class="btn btn-success"><a href="https://www.w3schools.com/" style="color:white;">w3school web</a></button><br>
+        <div class="collapse kk" id="demo">
+            <p class="a" id='p1'></p>
+            <p class='a' id='p1-1'>可以看到有一行<span style="color: red;">button</span>可下拉<span
+                    style="color: red;">利用dropdown</span>，下面有許多連結，
+                而且每幾個小標題都包含在一個大標題內<span style="color: red;">用ul和li,加上大小調整</span>，簡單明瞭。</p>
+            <img src="images/w3school/頁面1.png" id="page1" class='a'>
+            <img src="images/w3school/頁面1-1.png" class="a" id="page1-1"><br>
+            <p class="a" id="p1-2"></p>
+
+        </div>
+        <!-- 以上是第一行 -->
+        <!-- <div class='collapse'> -->
+        <div class="collapse kk" style='position:relative; float:right; width: 35%'>
+            <button type="button" class="btn btn-link" data-toggle="collapse" data-target=".ww"><img
+                    src="images/w3school/arrow01.png" class="b" id="arrow1"></button>
+            <p class="b" id="p1-3">點起來</p>
+        </div>
+        <div class="collapse ww">
+            <!-- <p class="b" style='width: 10px;'></p> -->
+            <button type="button" class="btn btn-link" data-toggle="collapse" data-target=".mm"><img
+                    src="images/w3school/arrow右上左上-1.png" id='arrow3'></button>
+            <img src="images/w3school/頁面2.png" id="page2">
+            <p class='b' id='p2'>利用<span style="color: red;">ul和li</span>做成，大標題字體調大，且每個小標題均附帶<span
+                    style="color: red;">a</span>連結</p><br>
+        </div>
+        <!-- 以上是第二行         -->
+        <div class="collapse mm">
+            <img src="images/w3school/arrow右.png" style="width: 200px;height: 200px;">
+            <p class='c' style="width: 100px;">用<span style="color: red;">h1和p</span>去調字體大小，並配合<span
+                    style="color: red;">button加a</span>做兩組超連結</p>
+            <img src="images/w3school/頁面3.png" style="width: 600px;height: 300px;">
+            <!-- <p class='c' style="width: 50px;margin: 0px;">go</p> -->
+            <button type="button" class="btn btn-link" data-toggle="collapse" data-target=".nn"><img
+                    src="images/w3school/arrow右.png" id='arrow4' class='c'></button>
+
+        </div>
+        <!-- 以上是第三行         -->
+        <div class="collapse nn">
+            <img src="images/w3school/arrow右.png" style="width: 200px;height: 200px;">
+            <p class="d" style="width: 150px;">利用<span style="color: red;">w3-hide-small</span>和<span
+                    style="color: red;">w3-light-grey</span>
+                和<span style="color: red;">w3-card-2</span>來一層一層寫出來，
+                下面那個<span style="color: red;">button紐</span>尤其重要，點選後可以看到完整的原始碼</p>
+            <img src="images/w3school/頁面4.png" style="width: 500px;height: 250px;">
+        </div>
+        <!-- 以上是第四行         -->
+        <div class="collapse nn" style='position:relative; float:right; width: 40%'>
+            <button type="button" class="btn btn-link" data-toggle="collapse" data-target=".gg"><img
+                    src="images/w3school/arrow01.png" style="width: 100px;height: 100px;"></button>
+            <p style="display: inline;">最後一個啦，加油</p>
+        </div>
+        <div class="collapse gg">
+            <p class='e' style="width: 100px;font-size: 30px;">優點:</p>
+            <p class='e' style="width: 500px;font-size: 20px;">整齊，看上去非常的簡單，使用的程式也不難</p><br>
+            <p class='e' style="width: 100px;font-size: 30px;">缺點:</p>
+            <p class='e' style="width: 500px;font-size: 20px;">分類可以再細一點，大標題可以再多一些，不然找需要的有點麻煩</p>
+        </div>
+    </div>
+</body>
+
+</html>
